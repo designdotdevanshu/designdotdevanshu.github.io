@@ -70,50 +70,99 @@ button:focus-visible {
 }
 
 /* App.css */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: Roboto;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2D3235;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding-right: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.button:hover .button__border-circle {
+  transform: translateX(60px);
+}
+.button:hover .button__mask-circle {
+  clip-path: circle(25px at 85px);
 }
 
-.card {
-  padding: 2em;
+.button__text {
+  z-index: 1;
+  font-size: 14px;
+  margin-right: -18px;
+  color: #FAFAFA;
+  letter-spacing: 0.05em;
 }
 
-.read-the-docs {
-  color: #888;
+.button__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.wrapper {
-  display: grid;
-  place-items: center;
+.button__arrow {
+  left: 35px;
+  height: 3px;
+  width: 50px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  background-color: #B3D23F;
 }
+.button__arrow:after {
+  content: "";
+  width: 0;
+  height: 0;
+  top: -5px;
+  right: -7px;
+  position: absolute;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #B3D23F;
+}
+
+.button__border-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #BFBFBF;
+  transition: transform 987ms;
+}
+
+.button__mask-circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(25px);
+  transition: clip-path 987ms;
+}
+
+.button__small-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateX(60px);
+  background-color: #B3D23F;
+}
+
+/*# sourceMappingURL=s.css.map */
